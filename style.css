@@ -1,0 +1,48 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --font: 'Nunito', system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: linear-gradient(170deg, #dbeafe 0%, #eff6ff 50%, #f0f9ff 100%) fixed;
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #1e3a5f;
+  min-height: 100vh;
+}
+
+header {
+  padding: 3.5rem 2rem 3rem;
+  text-align: center;
+  background: linear-gradient(180deg, #1e3a5f 0%, #2563eb 60%, #93c5fd 100%);
+}
+
+.header-inner { max-width: 960px; margin: 0 auto; }
+
+header h1 {
+  font-size: clamp(1.7rem, 5vw, 2.9rem);
+  font-weight: 800; color: #fff;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 16px rgba(0,0,80,0.4);
+}
+
+.subtitle {
+  margin-top: 0.6rem; font-size: 0.9rem;
+  font-weight: 600; color: rgba(255,255,255,0.75);
+  letter-spacing: 0.06em;
+}
+
+main {
+  max-width: 960px; margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+.coming-soon {
+  font-size: 1.1rem; font-weight: 700;
+  color: #64748b; text-align: center;
+  opacity: 0.6;
+}

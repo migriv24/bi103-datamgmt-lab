@@ -1,0 +1,13 @@
+{
+  "name": "bi103-datamgmt-lab",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "deploy": "npm run build && gh-pages -d dist"
+  },
+  "devDependencies": {
+    "vite": "^8.0.0",
+    "gh-pages": "^6.0.0"
+  }
+}
