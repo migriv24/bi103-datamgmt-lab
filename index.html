@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Data Management &mdash; BI 103 Lab</title>
+  <title>Body Data &mdash; BI 103 Lab</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
@@ -13,14 +13,139 @@
 
   <header>
     <div class="header-inner">
-      <h1>Data Management</h1>
-      <p class="subtitle">BI 103 &nbsp;&middot;&nbsp; Laboratory</p>
+      <h1>My Body Data</h1>
+      <p class="subtitle">BI 103 &nbsp;&middot;&nbsp; Data Management Lab</p>
+      <div class="stat-row">
+        <div class="stat-pill">Started &nbsp;<strong>260 lbs</strong>&nbsp; Jun 2024</div>
+        <div class="stat-pill">All-time low &nbsp;<strong>203 lbs</strong>&nbsp; Oct 2025</div>
+        <div class="stat-pill">Now &nbsp;<strong>218 lbs</strong>&nbsp; May 2026</div>
+        <div class="stat-pill">April 2026 &nbsp;<strong>31 runs</strong>&nbsp; logged</div>
+      </div>
     </div>
   </header>
 
+  <nav id="main-nav">
+    <a href="#journey">Weight Journey</a>
+    <a href="#activity">Spring Activity</a>
+    <a href="#ethics">Ethics &amp; Bias</a>
+  </nav>
+
   <main>
-    <p class="coming-soon">Content coming soon.</p>
+
+    <!-- WEIGHT JOURNEY -->
+    <section id="journey">
+      <h2>Two Years of Weight Data</h2>
+      <p>This covers June 2024 through May 2026, logged inconsistently in MyFitnessPal. The gaps are part of the story too. There was a real 3-month blackout over winter 2024-2025 where I just stopped tracking. The data picks back up in March 2025 with a stronger effort, hitting a personal low of 203.4 lbs by October. Then life shifted again.</p>
+
+      <div class="phase-legend">
+        <span class="phase-tag p1">Jun&ndash;Dec 2024: Starting out</span>
+        <span class="phase-tag pgap">Winter gap (no data)</span>
+        <span class="phase-tag p2">Mar&ndash;Oct 2025: Real comeback</span>
+        <span class="phase-tag p3">Nov 2025&ndash;now: Holding &amp; running</span>
+      </div>
+
+      <div class="chart-card">
+        <canvas id="weightChart"></canvas>
+      </div>
+
+      <div class="chart-note">
+        The spike in April 2025 (219 &rarr; 230 lbs in two days) is almost certainly water retention, not actual fat gain. It resolved within two weeks. Notable data artifact.
+      </div>
+    </section>
+
+    <!-- SPRING ACTIVITY -->
+    <section id="activity">
+      <h2>Spring 2026: Running More Than Ever</h2>
+      <p>Here's the interesting tension in the data: starting in late March 2026, I ran more consistently than at any other point in this dataset. 31 running sessions logged in April alone, covering 80 miles total for the month. The weight during this same period? Sitting around 218&ndash;220. Exercise alone doesn't tell the full story.</p>
+
+      <div class="chart-card">
+        <canvas id="exerciseChart"></canvas>
+      </div>
+
+      <h3>Recent Sessions (May 2026)</h3>
+      <div class="session-grid">
+        <div class="session-card run">
+          <div class="session-date">May 17</div>
+          <div class="session-type">Running &times; 2</div>
+          <div class="session-stats">2.25 mi + 1.88 mi &nbsp;&bull;&nbsp; 5:53 &amp; 6:12 AM</div>
+          <div class="session-pace">8.3 &amp; 7.6 min/mi</div>
+        </div>
+        <div class="session-card walk">
+          <div class="session-date">May 19</div>
+          <div class="session-type">Walking &times; 2</div>
+          <div class="session-stats">1.18 mi + 0.60 mi &nbsp;&bull;&nbsp; midday</div>
+          <div class="session-pace">Campus walking</div>
+        </div>
+        <div class="session-card run">
+          <div class="session-date">May 21</div>
+          <div class="session-type">Running + Walking</div>
+          <div class="session-stats">1.56 mi run &nbsp;&bull;&nbsp; 6:41 AM</div>
+          <div class="session-pace">11.5 min/mi</div>
+        </div>
+        <div class="session-card walk">
+          <div class="session-date">May 22</div>
+          <div class="session-type">Walking</div>
+          <div class="session-stats">0.62 mi &nbsp;&bull;&nbsp; 3:20 PM</div>
+          <div class="session-pace">Light day</div>
+        </div>
+        <div class="session-card run">
+          <div class="session-date">May 23</div>
+          <div class="session-type">Running &times; 2 + Walking</div>
+          <div class="session-stats">2.36 mi + 1.75 mi &nbsp;&bull;&nbsp; 8:01 AM</div>
+          <div class="session-pace">9.1 &amp; 8.2 min/mi</div>
+        </div>
+        <div class="session-card run">
+          <div class="session-date">May 24</div>
+          <div class="session-type">Running + Walking</div>
+          <div class="session-stats">2.45 mi run &nbsp;&bull;&nbsp; 8:34 AM</div>
+          <div class="session-pace">9.6 min/mi</div>
+        </div>
+      </div>
+
+      <div class="chart-note">
+        Almost all runs happen between 5:50 and 8:35 AM. Walking tends to show up midday. The watch auto-detects both, which is what the "(auto)" label means in Samsung Health.
+      </div>
+    </section>
+
+    <!-- ETHICS & BIAS -->
+    <section id="ethics">
+      <h2>Ethics, Bias &amp; Peer Review</h2>
+      <p>The assignment asks how these concepts relate to personal body data collection. The honest answer is that they are all tangled together, and this dataset makes that pretty visible.</p>
+
+      <div class="ethics-grid">
+
+        <div class="ethics-card">
+          <div class="ethics-icon">&#9878;</div>
+          <h3>Ethical Considerations</h3>
+          <p>I use Samsung Health and MyFitnessPal knowing both companies profit from user data. I disagree with this in principle but use them anyway because they work and accessible alternatives are limited. That is not a personal failing, it is a structural problem with how health tech is built.</p>
+          <p>The ethical issues that actually bother me are more specific. I had to sign up for a paid trial just to export my own health history from MyFitnessPal. Samsung's export button for Health data is broken. If data ownership is real, accessing your own records should not require a subscription. That is a consent problem disguised as a UX problem.</p>
+          <p>In a study context, the key ethical requirements would be: the right to withdraw data at any time, anonymization that actually holds up (re-identification through cross-referencing "anonymous" data is well-documented), and a clear answer to who benefits from the data being collected. I would share my health data freely if I knew it was going toward research rather than ad targeting.</p>
+        </div>
+
+        <div class="ethics-card">
+          <div class="ethics-icon">&#9878;</div>
+          <h3>Reducing Bias</h3>
+          <p>The gaps in this dataset are the most obvious source of bias. The three-month blackout over winter 2024-2025 was not random. It happened during a stressful period when I was not seeing the progress I wanted. If this data were part of a study, that pattern would skew any conclusions about my typical behavior, because I only logged consistently during the periods when things were going better.</p>
+          <p>Automated data collection from my Galaxy Watch helps with this. The watch records activity whether or not I am motivated to open an app. That is why the Samsung Health data is more complete than the MyFitnessPal logs. The runs from April and May 2026 are there even on the weeks when I would not have thought to log them manually.</p>
+          <p>Reducing bias in future data collection would mean: consistent weigh-ins at the same time under the same conditions, not selectively logging meals, and treating bad weeks as worth recording just as much as good ones. The data should reflect reality, not a highlight reel.</p>
+        </div>
+
+        <div class="ethics-card">
+          <div class="ethics-icon">&#9878;</div>
+          <h3>Peer Review</h3>
+          <p>I had not looked at my running pace data until building this site. I genuinely did not know if I was improving or staying flat. That is exactly what peer review catches: things you cannot see because you are too close to the data, or because you were not asking the right questions.</p>
+          <p>A peer reviewing this dataset might point out that the April 2025 weight spike (219 to 230 lbs in two days) is almost certainly water retention and should not be interpreted as a failure. They might also ask why my weight has drifted back up to 218 lbs in spring 2026 despite running more than at any previous point in this dataset. That question does not have an obvious answer in the data. It would require looking at factors like diet and stress that I did not track consistently.</p>
+          <p>Peer review in personal data collection is not about catching dishonesty. It is about having someone ask the questions you did not think to ask, and notice patterns you normalized because you lived through them.</p>
+        </div>
+
+      </div>
+    </section>
+
   </main>
+
+  <footer>
+    <p>BI 103 Laboratory &nbsp;&middot;&nbsp; Spring 2026 &nbsp;&middot;&nbsp; Data sources: MyFitnessPal (weight) &amp; Samsung Health (activity)</p>
+  </footer>
 
   <script type="module" src="script.js"></script>
 </body>
